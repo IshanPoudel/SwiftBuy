@@ -3,7 +3,7 @@ import { bagOnly,  shoppingbag } from '../assets';
 import { textOnly } from '../assets';
 const Header = () => {
   return (
-    <div className="w-full h-15 bg-white border-b-[1px] border-b-gray-800">
+    <div className="w-full h-15 bg-white border-b-[1px] border-b-gray-800 sticky top-0 z-50">
         <div className="max-screen-xl  mx-auto my-4 px-20 flex items-center justify-between">
         <div>
             <ul className="flex items-center gap-8">
