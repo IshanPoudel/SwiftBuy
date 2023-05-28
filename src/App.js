@@ -7,6 +7,7 @@ import { productsData } from "./api/api";
 import {
   createBrowserRouter,Outlet,RouterProvider,ScrollRestoration
 } from "react-router-dom"
+import Product from "./components/Product";
 
 
 const Layout = ()=>
@@ -20,7 +21,34 @@ const Layout = ()=>
   )
 };
 
-const router = createBrowserRouter(
+// const router = createBrowserRouter(
+//   [
+//     {
+//       path: "/",
+//       element: <Layout/>,
+//       children:[
+//         {
+//           path: "/",
+//           element: <Home/>,
+//           loader : productsData
+//         }
+//       ]
+//     } , 
+//     {
+//       path: "/cart",
+//       element: <Layout/>,
+//       children: [
+//         {
+//           path: "/cart",
+//           element: <Cart/>,
+//         }
+//       ] 
+//     } 
+//   ]
+// )
+
+// Remember Layout contains Outlet which can be any children.
+ const router = createBrowserRouter(
   [
     {
       path: "/",
@@ -29,22 +57,22 @@ const router = createBrowserRouter(
         {
           path: "/",
           element: <Home/>,
-          loader : productsData
-        }
-      ]
-    } , 
-    {
-      path: "/cart",
-      element: <Layout/>,
-      children: [
+          loader: productsData,
+        },
         {
           path: "/cart",
           element: <Cart/>,
+
+        },
+        {
+          path: "/product/:id",
+          element: <Product/>
         }
-      ] 
-    } 
+
+      ]
+    }
   ]
-)
+ )
 
 function App() {
   return (
