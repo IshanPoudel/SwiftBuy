@@ -5,6 +5,7 @@ import { MdOutlineStar } from 'react-icons/md';
 const Product = () => {
 
   const [details , setDetails]=useState({});
+  
 
   const Location = useLocation();
 
@@ -61,11 +62,11 @@ const Product = () => {
                 <p className='text-xl'>Quantity</p>
                 {/* Div for button */}
                 <div className='flex items-center gap-4 text-sm font-semibold'>
-                  <button className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
+                  <button  className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
                     -
                   </button>
-                  <span>{1}</span>
-                  <button className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
+                  <span>1</span>
+                  <button  className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
                     +
                   </button>
                 </div>
