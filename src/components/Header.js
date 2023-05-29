@@ -3,6 +3,7 @@ import { bagOnly,  shoppingbag } from '../assets';
 import { textOnly } from '../assets';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
 const Header = () => {
     
     const productData = useSelector((state)=>state.bazar.productData);
@@ -32,12 +33,14 @@ const Header = () => {
             <li className='text-3xl text-black font-bold hover:text-blue-900 font-titlefont hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Element</li>
             <li className='text-3xl text-black font-bold hover:text-blue-900 font-titlefont hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Blog</li>
         </ul>
-        <div className='relative'>
-            <img src={shoppingbag} width='100' heigth='100' alt='cartLogo'></img>
-            <span className='absolute w-14 top-8 left-5 text-3xl flex items-center justify-center font-semibold ' >
-                {productData.length}
-            </span>
-        </div>
+        <Link to='/cart'>
+            <div className='relative'>
+                <img src={shoppingbag} width='100' heigth='100' alt='cartLogo'></img>
+                <span className='absolute w-14 top-8 left-5 text-3xl flex items-center justify-center font-semibold ' >
+                    {productData.length}
+                </span>
+            </div>
+        </Link>
         {/* Have an img source */}
 
         </div>
