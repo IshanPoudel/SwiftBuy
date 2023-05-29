@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import {useDispatch} from 'react-redux';
 import { MdOutlineStar } from 'react-icons/md';
+import {addToCart} from '../redux/bazarSlice';
 
 const Product = () => {
 
+  const dispatch = useDispatch()
   const [details , setDetails]=useState({});
+  let [baseQty , setBaseQty]=useState(1);
   
 
   const Location = useLocation();
@@ -62,17 +66,29 @@ const Product = () => {
                 <p className='text-xl'>Quantity</p>
                 {/* Div for button */}
                 <div className='flex items-center gap-4 text-sm font-semibold'>
-                  <button  className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
+                  <button onClick={()=> baseQty===1? baseQty=1:setBaseQty(baseQty-1)} className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
                     -
                   </button>
-                  <span>1</span>
-                  <button  className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
+                  <span>{baseQty}</span>
+                  <button onClick={()=> setBaseQty(baseQty+1)} className='border h-5 font-normal text-2xl flex items-center justify-center px-2 hover:bg-gray-700 hover:text-white cursor-pointer duration-300 active:bg-black'>
                     +
                   </button>
                 </div>
               </div>
               {/* Div for adding to cart */}
-              <button className='bg-black text-white py-3 px-6 active:bg-gray-800'>
+              <button onClick={
+                ()=>
+                dispatch(addToCart(
+                  {
+                    _id: details._id,
+                    title: details.title,
+                    image: details.image,
+                    price: details.price,
+                    quantity: baseQty,
+                    description: details.description,
+                  }
+                ))
+              } className='bg-black text-white py-3 px-6 active:bg-gray-800'>
                 Add To Cart
               </button>
             </div>
