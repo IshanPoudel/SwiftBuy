@@ -2,7 +2,12 @@ import React from 'react'
 import { bagOnly,  shoppingbag } from '../assets';
 import { textOnly } from '../assets';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const Header = () => {
+    
+    const productData = useSelector((state)=>state.bazar.productData);
+    console.log(productData)
+
   return (
     <div className="w-full h-15 bg-white border-b-[1px] border-b-gray-800 sticky top-0 z-50">
         <div className="max-screen-xl  mx-auto my-4 px-20 flex items-center justify-between">
@@ -30,7 +35,7 @@ const Header = () => {
         <div className='relative'>
             <img src={shoppingbag} width='100' heigth='100' alt='cartLogo'></img>
             <span className='absolute w-14 top-8 left-5 text-3xl flex items-center justify-center font-semibold ' >
-                0
+                {productData.length}
             </span>
         </div>
         {/* Have an img source */}
