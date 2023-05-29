@@ -8,7 +8,7 @@ import {
   createBrowserRouter,Outlet,RouterProvider,ScrollRestoration
 } from "react-router-dom"
 import Product from "./components/Product";
-
+import Login from "./pages/Login";
 
 const Layout = ()=>
 {
@@ -68,6 +68,10 @@ const Layout = ()=>
         {
           path: "/product/:id",
           element: <Product/>
+        },
+        {
+          path: "/login",
+          element: <Login/>
         }
 
       ]
