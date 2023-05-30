@@ -9,6 +9,7 @@ import {
 } from "react-router-dom"
 import Product from "./components/Product";
 import Login from "./pages/Login";
+import Checkout from "./pages/Checkout";
 
 const Layout = ()=>
 {
@@ -72,7 +73,11 @@ const Layout = ()=>
         {
           path: "/login",
           element: <Login/>
-        }
+        },
+        {
+          path: "/checkout" ,
+          element: <Checkout/>
+        },
 
       ]
     }

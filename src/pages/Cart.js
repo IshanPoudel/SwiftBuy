@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux'
 import CartItem from '../components/CartItem';
 import { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
+import { useRouteError } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const Cart = () => {
   // Get productdata
@@ -13,12 +16,23 @@ const Cart = () => {
 
   const handleCheckout=()=>
   {
-    if(userInfo){
+    if(userInfo && productData.length!=0){
       setPayNow(true);
     }
     else
     {
-      toast.error("Please sign in to Checkout");
+      if (!userInfo)
+      {
+        toast.error("Please sign in to Checkout");
+
+      }
+
+      
+      if (productData.length==0)
+      {
+        toast.error("Please add items to Cart");
+      }
+
 
     }
   }
@@ -62,9 +76,14 @@ const Cart = () => {
           <p className="font-titleFont font-semibold flex justify-between mt-6">
               Total <span className="text-xl font-bold">{totalAmt}</span>
           </p>
+          {/* Proceedto checkout only if signed in. */}
+          <Link to={payNow ? '/checkout' : ''}>
+        
           <button onClick={handleCheckout} className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">
+            
             Proceed to Checkout
           </button>
+          </Link>
 
           
         </div>
