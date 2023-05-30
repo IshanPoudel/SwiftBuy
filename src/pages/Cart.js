@@ -7,6 +7,7 @@ import { useRouteError } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
+
 const Cart = () => {
   // Get productdata
 
@@ -36,6 +37,10 @@ const Cart = () => {
 
     }
   }
+  
+  // Call the server to handle payment.
+  
+
 
 
   const [totalAmt , setTotalAmt] = useState("");
