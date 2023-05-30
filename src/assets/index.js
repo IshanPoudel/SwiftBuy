@@ -6,4 +6,5 @@ import githubLogo from './githubLogo.png';
 import bagOnly from './bagOnly.png'
 import textOnly from './textOnly.png'
 import shoppingbag from './shoppingbag.png'
-export {LogoLight , cart , paymentoptions , GoogleLogo , githubLogo , bagOnly , textOnly , shoppingbag };
+import loginImage from './login.png'
+export {LogoLight , cart , paymentoptions , GoogleLogo , githubLogo , bagOnly , textOnly , shoppingbag, loginImage };

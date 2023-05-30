@@ -2,11 +2,27 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import CartItem from '../components/CartItem';
 import { useState } from 'react';
+import { ToastContainer, toast } from "react-toastify";
 
 const Cart = () => {
   // Get productdata
 
   const productData = useSelector((state)=> state.bazar.productData);
+  const userInfo = useSelector((state)=>state.bazar.userInfo);
+  const [payNow , setPayNow] = useState(false);
+
+  const handleCheckout=()=>
+  {
+    if(userInfo){
+      setPayNow(true);
+    }
+    else
+    {
+      toast.error("Please sign in to Checkout");
+
+    }
+  }
+
 
   const [totalAmt , setTotalAmt] = useState("");
 
@@ -46,13 +62,25 @@ const Cart = () => {
           <p className="font-titleFont font-semibold flex justify-between mt-6">
               Total <span className="text-xl font-bold">{totalAmt}</span>
           </p>
-          <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">
+          <button onClick={handleCheckout} className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">
             Proceed to Checkout
           </button>
 
           
         </div>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     
     </div>
   )
