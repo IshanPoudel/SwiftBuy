@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/SwiftBuy/static/css/main.154113b1.css",
+    "main.js": "/SwiftBuy/static/js/main.29cd1c02.js",
+    "static/media/paymentoptions.png": "/SwiftBuy/static/media/paymentoptions.db24131f58ddd4bbb632.png",
+    "static/media/login.png": "/SwiftBuy/static/media/login.a952913a7a42e036aa49.png",
+    "static/media/shoppingbag.png": "/SwiftBuy/static/media/shoppingbag.faeceabeb79b93c46ec0.png",
+    "static/media/bagOnly.png": "/SwiftBuy/static/media/bagOnly.1a6b467673d484a47d70.png",
+    "static/media/LogoLight.png": "/SwiftBuy/static/media/LogoLight.d69fb6f406272ae978e0.png",
+    "index.html": "/SwiftBuy/index.html",
+    "main.154113b1.css.map": "/SwiftBuy/static/css/main.154113b1.css.map",
+    "main.29cd1c02.js.map": "/SwiftBuy/static/js/main.29cd1c02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.154113b1.css",
+    "static/js/main.29cd1c02.js"
+  ]
+}
