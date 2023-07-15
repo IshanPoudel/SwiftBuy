@@ -142,13 +142,25 @@ const Checkout = () => {
     <div className='flex flex-row gap-10'>
 
         <ShippingForm shippingInfo={shippingInfo} setValue={handleChange} handleSubmit={handleSubmit}/>
-        {isValid && <p>You can proceed to checkout </p>}
+        {isValid && (
+        <p className="text-center font-bold">You can proceed to checkout</p>
+      )}
 
-        {isValid && <StripeCheckout stripeKey='pk_test_51NDUhcCxQUsAxKRK6JQM9fauwmJLIpKiY4GPzHa8K97BYKVXEztwwjT0FVbpFkoEnMzKBvoBj8k0mlnCxhaHzvhW00VgonGphX'
-          name='SwiftBuy' amount={totalAmt*100} label='Pay to SwiftBuy' description= {`Your total amount is $${totalAmt}`} 
-          token={payment} email={userInfo.email}>
+        {isValid && (
+          <div className="flex justify-center">
+            <StripeCheckout
+              stripeKey="pk_test_51NDUhcCxQUsAxKRK6JQM9fauwmJLIpKiY4GPzHa8K97BYKVXEztwwjT0FVbpFkoEnMzKBvoBj8k0mlnCxhaHzvhW00VgonGphX"
+              name="SwiftBuy"
+              amount={totalAmt * 100}
+              label="Proceed to Payment"
+              description={`Your total amount is $${totalAmt}`}
+              token={payment}
+              email={userInfo.email}
+            ></StripeCheckout>
+         </div>
+      )}
 
-        </StripeCheckout>}
+        
         
 
 
