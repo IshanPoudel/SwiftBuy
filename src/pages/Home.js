@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(()=>
   {
-    setProducts(data.data)
+    setProducts(data)
 
   } , [data]
   

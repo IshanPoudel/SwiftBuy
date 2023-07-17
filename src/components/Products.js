@@ -2,7 +2,7 @@ import React from 'react'
 import ProductsCard from './ProductsCard'
 
 const Products = ({products}) => {
-
+  console.log("Products before being mapped")
   console.log(products )
   return (
     <div className='py-10'>
